@@ -6,8 +6,13 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:52:56 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/05 11:45:24 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:58:02 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_printf(const char *c, ...)
+{
+
+}
