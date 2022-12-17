@@ -6,7 +6,7 @@
 #    By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:33:10 by afgoncal          #+#    #+#              #
-#    Updated: 2022/12/05 11:35:35 by afgoncal         ###   ########.fr        #
+#    Updated: 2022/12/17 13:41:29 by afgoncal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC	=	ft_printf.c \
-		src/ft_putchar.c \
-		src/ft_putstr.c \
-		src/ft_strchr.c \
-		src/ft_strlen.c \
-		src/ft_strrev.c \
+		ft_extras.c \
 
 OBJ	= $(SRC:.c=.o)
 
