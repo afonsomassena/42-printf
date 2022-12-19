@@ -6,13 +6,13 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:19:37 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/17 14:07:06 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:26:16 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);

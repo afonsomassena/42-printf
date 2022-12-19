@@ -6,7 +6,7 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:52:56 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/17 13:56:23 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:40:16 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,18 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		flength;
+	int		i;
 
+	i = 0;
 	flength = 0;
 	va_start(ap, str);
-	while (*str)
+	while (str[i])
 	{
-		if (*str == '%' && *(str++))
-			ft_printfarg(*str, ap, &flength);
+		if (str[i] == '%' && str[i++])
+			ft_printarg(str[i], ap, &flength);
 		else
-			flength += ft_putchar(ap, str);
-		str++;
+			flength += ft_putchar(str[i]);
+		i++;
 	}
 	va_end(ap);
 	return (flength);
