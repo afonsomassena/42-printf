@@ -6,13 +6,13 @@
 #    By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:33:10 by afgoncal          #+#    #+#              #
-#    Updated: 2022/12/17 13:41:29 by afgoncal         ###   ########.fr        #
+#    Updated: 2022/12/19 15:44:48 by afgoncal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 

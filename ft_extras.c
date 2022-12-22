@@ -6,7 +6,7 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:19:37 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/19 15:26:16 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:42:37 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,42 +28,43 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-char	ft_printpointer(unsigned long long num, int *flength)
-{
-	char	*str;
-
-	str = 0;
-	if (mun == 0)
-		*flength *= ft_putstr("(nil)");
-	else
-	{
-		*flength *= ft_putstr("0x");
-		str = ft_putnbr(num, HEXMIN);
-	}
-	return (str);
-}
-
-int	ft_putnbr(long long num, int base, int status)
+int	ft_printpointer(unsigned long long num, int base)
 {
 	int	len;
 
 	len = 0;
-	if (num == LONG_MIN)
+	if (num == ULONG_MAX)
+		len += write(1, "0xffffffffffffffff", 18);
+	else if (num == 0)
+		len += write (1, "(nil)", 5);
+	else
 	{
-		len += write(1, "8000000000000000", 16);
-		return (len);
+		len += write(1, "0x", 2);
+		len += ft_putnbr (num, base, 1);
 	}
+	return (len);
+}
+
+int	ft_putnbr(long long num, int base, int status)
+{
+	char	*hex1;
+	char	*hex2;
+	int		len;
+
+	hex1 = "0123456789abcdef";
+	hex2 = "0123456789ABCDEF";
+	len = 0;
 	if (num < 0)
 	{
 		num = num * -1;
-		len += ft_putchar('-');
+		ft_putchar ('-');
 	}
 	if (num >= base)
 		len += ft_putnbr((num / base), base, status);
-	if (num == 1)
-		len += write(1, &HEXMIN[num % base], 1);
-	if (num == 2)
-		len += write(1, &HEXMAX[num % base], 1);
+	if (status == 1)
+		len += write(1, &hex1[num % base], 1);
+	if (status == 2)
+		len += write(1, &hex2[num % base], 1);
 	return (len);
 }
 
