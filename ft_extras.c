@@ -6,7 +6,7 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:19:37 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/22 14:42:37 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:13:30 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		str = "(null)";
 	while (str[i])
 		ft_putchar(str[i++]);
 	return (i);
@@ -54,10 +56,15 @@ int	ft_putnbr(long long num, int base, int status)
 	hex1 = "0123456789abcdef";
 	hex2 = "0123456789ABCDEF";
 	len = 0;
-	if (num < 0)
+	if (num == LONG_MIN)
+	{
+		len += write(1, "8000000000000000", 16);
+		return (len);
+	}
+	else if (num < 0)
 	{
 		num = num * -1;
-		ft_putchar ('-');
+		len += ft_putchar ('-');
 	}
 	if (num >= base)
 		len += ft_putnbr((num / base), base, status);

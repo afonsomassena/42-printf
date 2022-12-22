@@ -6,7 +6,7 @@
 /*   By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:52:56 by afgoncal          #+#    #+#             */
-/*   Updated: 2022/12/22 14:43:05 by afgoncal         ###   ########.fr       */
+/*   Updated: 2022/12/22 15:04:37 by afgoncal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printarg(char c, va_list ap)
 		len += ft_putstr(va_arg(ap, char *));
 	else if (c == 'p')
 		len += ft_printpointer(va_arg(ap, unsigned long long), 16);
-	else if (c == 'd' && c == 'i')
+	else if (c == 'd' || c == 'i')
 		len += ft_putnbr((long long)va_arg(ap, int), 10, 1);
 	else if (c == 'u')
 		len += ft_putnbrun(va_arg(ap, unsigned int));

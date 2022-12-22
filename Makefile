@@ -6,7 +6,7 @@
 #    By: afgoncal <massenaafonso1@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:33:10 by afgoncal          #+#    #+#              #
-#    Updated: 2022/12/19 15:44:48 by afgoncal         ###   ########.fr        #
+#    Updated: 2022/12/22 14:51:16 by afgoncal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I .
 
 SRC	=	ft_printf.c \
 		ft_extras.c \
